@@ -1,0 +1,23 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tree-sitter build artifacts
+*.so
+*.dylib
+*.dll
+*.wasm
+build/
+bindings/node/build/
+
+# Prebuild artifacts
+prebuilds/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db

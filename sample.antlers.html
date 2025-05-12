@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ site_name }}</h1>
+        <nav>
+            <ul>
+                {{ nav:main }}
+                    <li><a href="{{ url }}">{{ title }}</a></li>
+                {{ /nav:main }}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ if content }}
+            <article>
+                <h2>{{ content:title }}</h2>
+                <p>{{ content:body }}</p>
+            </article>
+        {{ else }}
+            <p>No content available.</p>
+        {{ /if }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} {{ site_name }}. All rights reserved.</p>
+    </footer>
+</body>
+</html>

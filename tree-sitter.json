@@ -1,0 +1,41 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "antlers",
+      "camelcase": "Antlers",
+      "title": "Antlers",
+      "scope": "source.antlers",
+      "file-types": [
+        "antlers"
+      ],
+      "injection-regex": "^antlers$",
+      "class-name": "TreeSitterAntlers"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Antlers tree sitter grammar",
+    "authors": [
+      {
+        "name": "Robertsson",
+        "email": "-",
+        "url": "https://robertsson.none/"
+      }
+    ],
+    "links": {
+      "repository": "https://https.com/",
+      "funding": "https://https.com/"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
