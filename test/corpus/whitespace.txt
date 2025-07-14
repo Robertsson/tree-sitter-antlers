@@ -1,0 +1,233 @@
+==================
+Variable spacing
+==================
+
+{{title}}
+{{ title }}
+{{  title  }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text))
+
+==================
+Modifier spacing
+==================
+
+{{title|uppercase}}
+{{ title | uppercase }}
+{{  title  |  uppercase  }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))))
+  (text))
+
+==================
+Parameter spacing
+==================
+
+{{ collection from="posts" limit="5" }}
+{{ collection from = "posts" limit = "5" }}
+{{  collection  from  =  "posts"  limit  =  "5"  }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (directive_tag
+      (variable)
+      (tag_parameters
+        (parameter
+          (parameter_name)
+          (parameter_value
+            (string)))
+        (parameter
+          (parameter_name)
+          (parameter_value
+            (string))))))
+  (text)
+  (antlers_tag
+    (directive_tag
+      (variable)
+      (tag_parameters
+        (parameter
+          (parameter_name)
+          (parameter_value
+            (string)))
+        (parameter
+          (parameter_name)
+          (parameter_value
+            (string))))))
+  (text)
+  (antlers_tag
+    (directive_tag
+      (variable)
+      (tag_parameters
+        (parameter
+          (parameter_name)
+          (parameter_value
+            (string)))
+        (parameter
+          (parameter_name)
+          (parameter_value
+            (string))))))
+  (text))
+
+==================
+Binary expression spacing
+==================
+
+{{ a + b }}
+{{ a  +  b }}
+{{ a && b }}
+{{ a  &&  b }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text))
+
+==================
+Parentheses spacing
+==================
+
+{{ (title) }}
+{{ ( title ) }}
+{{ (a + b) }}
+{{ ( a + b ) }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (parenthesized_expression
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (parenthesized_expression
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (parenthesized_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (variable)))))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (parenthesized_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (variable)))))))))
+  (text))

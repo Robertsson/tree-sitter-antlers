@@ -1,0 +1,310 @@
+==================
+Comparison operators
+==================
+
+{{ a == b }}
+{{ a != b }}
+{{ a === b }}
+{{ a !== b }}
+{{ a < b }}
+{{ a > b }}
+{{ a <= b }}
+{{ a >= b }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text))
+
+==================
+Logical operators
+==================
+
+{{ a && b }}
+{{ a || b }}
+{{ a && b || c }}
+{{ (a || b) && c }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (variable)))))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (parenthesized_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (variable)))
+                  (expression
+                    (primary_expression
+                      (variable)))))))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text))
+
+==================
+Unary operators
+==================
+
+{{ !a }}
+{{ -b }}
+{{ +c }}
+{{ !!active }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (unary_expression
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (unary_expression
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (unary_expression
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (unary_expression
+          (expression
+            (unary_expression
+              (expression
+                (primary_expression
+                  (variable)))))))))
+  (text))
+
+==================
+Mixed expressions
+==================
+
+{{ !active && confirmed }}
+{{ age >= 18 || verified }}
+{{ (a > 5) && (b < 10) }}
+{{ name === "admin" && !disabled }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (unary_expression
+              (expression
+                (primary_expression
+                  (variable)))))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (number)))))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (parenthesized_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (variable)))
+                  (expression
+                    (primary_expression
+                      (number)))))))
+          (expression
+            (parenthesized_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (variable)))
+                  (expression
+                    (primary_expression
+                      (number)))))))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (string
+                    (double_quoted_string))))))
+          (expression
+            (unary_expression
+              (expression
+                (primary_expression
+                  (variable)))))))))
+  (text))

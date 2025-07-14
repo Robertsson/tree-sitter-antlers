@@ -1,0 +1,173 @@
+==================
+Basic hash comments
+==================
+
+{{# This is a simple comment #}}
+{{# Another comment #}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Basic block comments
+==================
+
+{{!-- This is a block comment --}}
+{{!-- Another block comment --}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Empty comments
+==================
+
+{{##}}
+{{!----}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Comments with special characters
+==================
+
+{{# Comment with # hash inside #}}
+{{!-- Comment with - dash inside --}}
+{{# Comment with {{ braces }} inside #}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Multi-line comments
+==================
+
+{{# Multi-line
+comment with
+several lines #}}
+
+{{!-- Another
+multi-line
+comment --}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Comments with whitespace
+==================
+
+{{#   Comment with leading/trailing spaces   #}}
+{{!--   Block comment with spaces   --}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Comments mixed with content
+==================
+
+<h1>{{# Page title comment #}}Welcome</h1>
+<p>{{!-- Paragraph comment --}}Hello world</p>
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Nested-like patterns
+==================
+
+{{# Comment with ### multiple hashes #}}
+{{!-- Comment with --- multiple dashes --}}
+{{# Comment with #}} fake closing #}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Comments with code-like content
+==================
+
+{{# {{ variable }} inside comment #}}
+{{!-- if condition && logic inside --}}
+{{# function(param1, param2) #}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Unicode and special characters
+==================
+
+{{# Comment with émojis 🎉 and ñiño #}}
+{{!-- Comment with symbols @#$%^&*() --}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))

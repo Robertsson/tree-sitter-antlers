@@ -1,14 +1,18 @@
 {
   "name": "tree-sitter-antlers",
-  "version": "0.1.0",
-  "description": "Antlers tree sitter grammar",
-  "repository": "https://github.com/Robertsson/tree-sitter-antlers.git",
-  "funding": "-",
+  "version": "1.0.0",
+  "description": "Tree-sitter grammar for Antlers templating language used in Statamic CMS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tree-sitter/tree-sitter-antlers.git"
+  },
+  "homepage": "https://github.com/tree-sitter/tree-sitter-antlers#readme",
+  "bugs": {
+    "url": "https://github.com/tree-sitter/tree-sitter-antlers/issues"
+  },
   "license": "MIT",
   "author": {
-    "name": "Robertsson",
-    "email": "-",
-    "url": "https://github.com/Robertsson/"
+    "name": "Tree-sitter Antlers Contributors"
   },
   "main": "bindings/node",
   "types": "bindings/node",
@@ -16,7 +20,11 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "antlers"
+    "antlers",
+    "statamic",
+    "templating",
+    "syntax",
+    "highlighting"
   ],
   "files": [
     "grammar.js",
@@ -26,6 +34,7 @@
     "bindings/node/*",
     "queries/*",
     "src/**",
+    "test/**",
     "*.wasm"
   ],
   "dependencies": {
@@ -46,10 +55,25 @@
   },
   "scripts": {
     "install": "node-gyp-build",
-    "prestart": "tree-sitter build --wasm",
-    "start": "tree-sitter playground",
-    "test": "node --test bindings/node/*_test.js",
-    "generate": "tree-sitter generate",
-    "parse": "tree-sitter parse sample.antlers.html"
-  }
+    "build": "tree-sitter generate && node-gyp-build",
+    "build-wasm": "tree-sitter build --wasm",
+    "test": "echo '=== Running Tree-sitter Antlers Tests ===' && tree-sitter test && echo '=== Test Summary ===' && echo 'Exit code:' $? && echo 'Tests completed!'",
+    "test-silent": "tree-sitter test",
+    "test-debug": "tree-sitter test --debug",
+    "playground": "tree-sitter playground",
+    "parse": "tree-sitter parse",
+    "highlight": "tree-sitter highlight",
+    "prebuild": "prebuildify --napi --strip",
+    "lint": "tree-sitter test && tree-sitter highlight sample.antlers.html > /dev/null"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.antlers",
+      "file-types": [
+        "antlers.html",
+        "antlers"
+      ],
+      "injection-regex": "antlers"
+    }
+  ]
 }

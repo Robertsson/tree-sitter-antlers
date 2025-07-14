@@ -1,0 +1,93 @@
+==================
+Basic if statement
+==================
+
+{{ if user.active }}
+  Welcome!
+{{ /if }}
+
+---
+
+(source
+  (text)
+  (if_statement
+    (if_keyword)
+    (expression
+      (primary_expression
+        (variable)))
+    (text))
+  (text))
+
+==================
+If with comparison
+==================
+
+{{ if age >= 18 }}
+  Adult content
+{{ /if }}
+
+---
+
+(source
+  (text)
+  (if_statement
+    (if_keyword)
+    (expression
+      (binary_expression
+        (expression
+          (primary_expression
+            (variable)))
+        (expression
+          (primary_expression
+            (number)))))
+    (text))
+  (text))
+
+==================
+If else structure
+==================
+
+{{ if status == "active" }}
+  Active user
+{{ else }}
+  Inactive user
+{{ /if }}
+
+---
+
+(source
+  (text)
+  (if_statement
+    (if_keyword)
+    (expression
+      (binary_expression
+        (expression
+          (primary_expression
+            (variable)))
+        (expression
+          (primary_expression
+            (string
+              (double_quoted_string))))))
+    (text)
+    (text))
+  (text))
+
+==================
+Unless statement
+==================
+
+{{ unless user.banned }}
+  User content
+{{ /unless }}
+
+---
+
+(source
+  (text)
+  (unless_statement
+    (unless_keyword)
+    (expression
+      (primary_expression
+        (variable)))
+    (text))
+  (text))

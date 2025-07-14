@@ -1,0 +1,125 @@
+==================
+Basic taxonomy loop
+==================
+
+{{ taxonomy:tags }}
+  <span>Tag</span>
+{{ /taxonomy:tags }}
+
+---
+
+(source
+  (text)
+  (taxonomy_loop
+    (taxonomy_keyword)
+    (variable)
+    (text)
+    (taxonomy_keyword)
+    (variable))
+  (text))
+
+==================
+Basic form loop
+==================
+
+{{ form:contact }}
+  <input />
+{{ /form:contact }}
+
+---
+
+(source
+  (text)
+  (form_loop
+    (form_keyword)
+    (variable)
+    (text)
+    (form_keyword)
+    (variable))
+  (text))
+
+==================
+Form errors block
+==================
+
+{{ form:errors }}
+  <div>Error</div>
+{{ /form:errors }}
+
+---
+
+(source
+  (text)
+  (form_errors
+    (text))
+  (text))
+
+==================
+Entries loop
+==================
+
+{{ entries }}
+  <li>Entry</li>
+{{ /entries }}
+
+---
+
+(source
+  (text)
+  (entries_loop
+    (entries_keyword)
+    (text)
+    (entries_keyword))
+  (text))
+
+==================
+Taxonomy with parameters
+==================
+
+{{ taxonomy:tags min_count="3" }}
+  <span>Tag</span>
+{{ /taxonomy:tags }}
+
+---
+
+(source
+  (text)
+  (taxonomy_loop
+    (taxonomy_keyword)
+    (variable)
+    (tag_parameters
+      (parameter
+        (parameter_name)
+        (parameter_value
+          (string
+            (double_quoted_string)))))
+    (text)
+    (taxonomy_keyword)
+    (variable))
+  (text))
+
+==================
+Taxonomy with conditional parameter
+==================
+
+{{ taxonomy:categories title:contains="featured" }}
+  <h2>Category</h2>
+{{ /taxonomy:categories }}
+
+---
+
+(source
+  (text)
+  (taxonomy_loop
+    (taxonomy_keyword)
+    (variable)
+    (tag_parameters
+      (parameter
+        (parameter_name)
+        (parameter_value
+          (string
+            (double_quoted_string)))))
+    (text)
+    (taxonomy_keyword)
+    (variable))
+  (text))

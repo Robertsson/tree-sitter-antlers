@@ -1,23 +1,49 @@
-# Node.js dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.DS_Store
+# Rust artifacts
+target/
 
-# Tree-sitter build artifacts
+# Node artifacts
+build/
+prebuilds/
+node_modules/
+
+# Swift artifacts
+.build/
+
+# Go artifacts
+_obj/
+
+# Python artifacts
+.venv/
+dist/
+*.egg-info
+*.whl
+
+# C artifacts
+*.a
 *.so
+*.so.*
 *.dylib
 *.dll
+*.pc
+*.exp
+*.lib
+
+# Zig artifacts
+.zig-cache/
+zig-cache/
+zig-out/
+
+# Example dirs
+/examples/*/
+
+# Grammar volatiles
 *.wasm
-build/
-bindings/node/build/
+*.obj
+*.o
 
-# Prebuild artifacts
-prebuilds/
-
-# Logs
-*.log
-
-# OS-specific files
+# Archives
+*.tar.gz
+*.tgz
+*.zip
 .DS_Store
-Thumbs.db

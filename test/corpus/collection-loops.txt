@@ -1,0 +1,103 @@
+==================
+Collection with colon syntax
+==================
+
+{{ collection:blog }}
+  <h2>Title</h2>
+{{ /collection:blog }}
+
+---
+
+(source
+  (text)
+  (collection_loop
+    (collection_keyword)
+    (variable)
+    (text)
+    (collection_keyword)
+    (variable))
+  (text))
+
+==================
+Collection with from parameter
+==================
+
+{{ collection from="news" }}
+  <article>Content</article>
+{{ /collection }}
+
+---
+
+(source
+  (text)
+  (collection_loop
+    (collection_keyword)
+    (tag_parameters
+      (parameter
+        (parameter_name)
+        (parameter_value
+          (string
+            (double_quoted_string)))))
+    (text)
+    (collection_keyword))
+  (text))
+
+==================
+Nav with colon syntax
+==================
+
+{{ nav:main }}
+  <li>Item</li>
+{{ /nav:main }}
+
+---
+
+(source
+  (text)
+  (nav_loop
+    (nav_keyword)
+    (variable)
+    (text)
+    (nav_keyword)
+    (variable))
+  (text))
+
+==================
+Taxonomy loop
+==================
+
+{{ taxonomy:tags }}
+  <span>Tag</span>
+{{ /taxonomy:tags }}
+
+---
+
+(source
+  (text)
+  (taxonomy_loop
+    (taxonomy_keyword)
+    (variable)
+    (text)
+    (taxonomy_keyword)
+    (variable))
+  (text))
+
+==================
+Form loop
+==================
+
+{{ form:contact }}
+  <input />
+{{ /form:contact }}
+
+---
+
+(source
+  (text)
+  (form_loop
+    (form_keyword)
+    (variable)
+    (text)
+    (form_keyword)
+    (variable))
+  (text))

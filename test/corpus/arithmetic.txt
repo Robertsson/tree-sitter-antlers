@@ -1,0 +1,290 @@
+==================
+Basic arithmetic operators
+==================
+
+{{ 1 + 2 }}
+{{ 5 - 3 }}
+{{ a * b }}
+{{ a / b }}
+{{ a % b }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (number)))
+          (expression
+            (primary_expression
+              (number)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (number)))
+          (expression
+            (primary_expression
+              (number)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text))
+
+==================
+Exponentiation
+==================
+
+{{ a ** b }}
+{{ 2 ** 3 ** 4 }}
+{{ (2 ** 3) ** 4 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (variable)))
+          (expression
+            (primary_expression
+              (variable)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (number)))
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (number)))
+              (expression
+                (primary_expression
+                  (number)))))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (parenthesized_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (number)))
+                  (expression
+                    (primary_expression
+                      (number)))))))
+          (expression
+            (primary_expression
+              (number)))))))
+  (text))
+
+==================
+Precedence testing
+==================
+
+{{ 2 + 3 * 4 }}
+{{ 2 * 3 + 4 }}
+{{ 2 ** 3 * 4 }}
+{{ 2 + 3 ** 4 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (number)))
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (number)))
+              (expression
+                (primary_expression
+                  (number)))))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (number)))
+              (expression
+                (primary_expression
+                  (number)))))
+          (expression
+            (primary_expression
+              (number)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (number)))
+              (expression
+                (primary_expression
+                  (number)))))
+          (expression
+            (primary_expression
+              (number)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (primary_expression
+              (number)))
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (number)))
+              (expression
+                (primary_expression
+                  (number)))))))))
+  (text))
+
+==================
+Complex expressions
+==================
+
+{{ (a + b) * (c - d) }}
+{{ a ** 2 + b ** 2 }}
+{{ 2 * 3 + 4 / 2 - 1 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (parenthesized_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (variable)))
+                  (expression
+                    (primary_expression
+                      (variable)))))))
+          (expression
+            (parenthesized_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (variable)))
+                  (expression
+                    (primary_expression
+                      (variable)))))))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (number)))))
+          (expression
+            (binary_expression
+              (expression
+                (primary_expression
+                  (variable)))
+              (expression
+                (primary_expression
+                  (number)))))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (binary_expression
+          (expression
+            (binary_expression
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (number)))
+                  (expression
+                    (primary_expression
+                      (number)))))
+              (expression
+                (binary_expression
+                  (expression
+                    (primary_expression
+                      (number)))
+                  (expression
+                    (primary_expression
+                      (number)))))))
+          (expression
+            (primary_expression
+              (number)))))))
+  (text))

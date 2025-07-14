@@ -1,0 +1,331 @@
+==================
+Double quoted strings
+==================
+
+{{ "simple string" }}
+{{ "string with spaces" }}
+{{ "" }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string))))))
+  (text))
+
+==================
+Single quoted strings
+==================
+
+{{ 'simple string' }}
+{{ 'string with spaces' }}
+{{ '' }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (single_quoted_string))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (single_quoted_string))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (single_quoted_string))))))
+  (text))
+
+==================
+String escape sequences
+==================
+
+{{ "string with \"escaped quotes\"" }}
+{{ 'string with \'escaped quotes\'' }}
+{{ "newline: \n tab: \t" }}
+{{ "unicode: \u0041 hex: \x41" }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string
+              (string_escape_sequence)
+              (string_escape_sequence)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (single_quoted_string
+              (string_escape_sequence)
+              (string_escape_sequence)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string
+              (string_escape_sequence)
+              (string_escape_sequence)))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string
+              (string_escape_sequence)
+              (string_escape_sequence)))))))
+  (text))
+
+==================
+Integer numbers
+==================
+
+{{ 42 }}
+{{ 0 }}
+{{ 1000 }}
+{{ 1_000_000 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))
+
+==================
+Float numbers
+==================
+
+{{ 3.14 }}
+{{ 0.5 }}
+{{ .5 }}
+{{ 123.456 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))
+
+==================
+Negative numbers
+==================
+
+{{ -42 }}
+{{ -3.14 }}
+{{ -.5 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))
+
+==================
+Scientific notation
+==================
+
+{{ 1e5 }}
+{{ 1.5e10 }}
+{{ 1.5e-10 }}
+{{ 2E+3 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))
+
+==================
+Hexadecimal numbers
+==================
+
+{{ 0x1A }}
+{{ 0X1A }}
+{{ 0xff }}
+{{ -0x1A }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))
+
+==================
+Octal numbers
+==================
+
+{{ 0755 }}
+{{ 0644 }}
+{{ 0123 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))

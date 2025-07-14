@@ -4,23 +4,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
-          "type": "applied_modifier",
+          "type": "directive_tag",
           "named": true
         },
         {
-          "type": "directive",
+          "type": "expression_with_modifiers",
           "named": true
         },
         {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "whitespace",
+          "type": "multi_statement",
           "named": true
         }
       ]
@@ -35,23 +31,45 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "modifier_name",
           "named": true
         },
         {
-          "type": "number",
+          "type": "modifier_parameters",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_method_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
-          "type": "string",
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "asset_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
           "named": true
         },
         {
           "type": "variable",
-          "named": true
-        },
-        {
-          "type": "whitespace",
           "named": true
         }
       ]
@@ -60,24 +78,36 @@
   {
     "type": "binary_expression",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "whitespace",
-          "named": true
-        }
-      ]
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
-    "type": "directive",
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "cache_tag",
     "named": true,
     "fields": {},
     "children": {
@@ -85,7 +115,310 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "collection_loop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_keyword",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
           "named": true
         },
         {
@@ -93,7 +426,239 @@
           "named": true
         },
         {
-          "type": "whitespace",
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directive_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_keyword",
+          "named": true
+        },
+        {
+          "type": "entries_keyword",
+          "named": true
+        },
+        {
+          "type": "form_keyword",
+          "named": true
+        },
+        {
+          "type": "nav_keyword",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_keyword",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "double_quoted_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "string_escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dump_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entries_loop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_keyword",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
           "named": true
         }
       ]
@@ -101,6 +666,37 @@
   },
   {
     "type": "expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "primary_expression",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression_with_modifiers",
     "named": true,
     "fields": {},
     "children": {
@@ -112,11 +708,720 @@
           "named": true
         },
         {
-          "type": "binary_expression",
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "form_errors",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "form_loop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_keyword",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "glide_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
           "named": true
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_keyword",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "interpolated_parameter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "locales_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "markdown_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "modifier_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "modifier_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
           "named": true
         },
         {
@@ -130,9 +1435,1495 @@
         {
           "type": "variable",
           "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multi_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_tag",
+          "named": true
         },
         {
-          "type": "whitespace",
+          "type": "expression_with_modifiers",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "nav_loop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_keyword",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "no_cache_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "oauth_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "once_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter_name",
+          "named": true
+        },
+        {
+          "type": "parameter_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "parameter_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "interpolated_parameter",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parenthesized_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "partial_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "prepend_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "primary_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_method_call",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "push_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recursive_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "redirect_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scope_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "session_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "single_quoted_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "string_escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "slot_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
           "named": true
         }
       ]
@@ -156,7 +2947,139 @@
           "named": true
         },
         {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
           "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
           "named": true
         }
       ]
@@ -165,14 +3088,548 @@
   {
     "type": "string",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "double_quoted_string",
+          "named": true
+        },
+        {
+          "type": "single_quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_escape_sequence",
+    "named": true,
     "fields": {}
+  },
+  {
+    "type": "svg_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "switch_case",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "switch_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "switch_case",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tag_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "taxonomy_loop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        },
+        {
+          "type": "taxonomy_keyword",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "template_content_tag",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "ternary_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "ignore_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unary_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unless_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "antlers_comment",
+          "named": true
+        },
+        {
+          "type": "antlers_tag",
+          "named": true
+        },
+        {
+          "type": "asset_tag",
+          "named": true
+        },
+        {
+          "type": "cache_tag",
+          "named": true
+        },
+        {
+          "type": "collection_loop",
+          "named": true
+        },
+        {
+          "type": "dump_tag",
+          "named": true
+        },
+        {
+          "type": "entries_loop",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "form_errors",
+          "named": true
+        },
+        {
+          "type": "form_loop",
+          "named": true
+        },
+        {
+          "type": "glide_tag",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "locales_tag",
+          "named": true
+        },
+        {
+          "type": "markdown_tag",
+          "named": true
+        },
+        {
+          "type": "nav_loop",
+          "named": true
+        },
+        {
+          "type": "no_cache_tag",
+          "named": true
+        },
+        {
+          "type": "oauth_tag",
+          "named": true
+        },
+        {
+          "type": "once_tag",
+          "named": true
+        },
+        {
+          "type": "partial_tag",
+          "named": true
+        },
+        {
+          "type": "php_echo",
+          "named": true
+        },
+        {
+          "type": "php_raw",
+          "named": true
+        },
+        {
+          "type": "prepend_tag",
+          "named": true
+        },
+        {
+          "type": "push_tag",
+          "named": true
+        },
+        {
+          "type": "recursive_pattern",
+          "named": true
+        },
+        {
+          "type": "redirect_tag",
+          "named": true
+        },
+        {
+          "type": "scope_tag",
+          "named": true
+        },
+        {
+          "type": "section_tag",
+          "named": true
+        },
+        {
+          "type": "session_tag",
+          "named": true
+        },
+        {
+          "type": "slot_tag",
+          "named": true
+        },
+        {
+          "type": "svg_tag",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "taxonomy_loop",
+          "named": true
+        },
+        {
+          "type": "template_content_tag",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "unless_keyword",
+          "named": true
+        },
+        {
+          "type": "unless_statement",
+          "named": true
+        },
+        {
+          "type": "user_tag",
+          "named": true
+        },
+        {
+          "type": "yield_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "user_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "yield_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "!=",
     "named": false
   },
   {
+    "type": "!==",
+    "named": false
+  },
+  {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "%=",
     "named": false
   },
   {
@@ -196,7 +3653,23 @@
     "named": false
   },
   {
+    "type": "**",
+    "named": false
+  },
+  {
+    "type": "*=",
+    "named": false
+  },
+  {
+    "type": "*recursive",
+    "named": false
+  },
+  {
     "type": "+",
+    "named": false
+  },
+  {
+    "type": "+=",
     "named": false
   },
   {
@@ -208,7 +3681,19 @@
     "named": false
   },
   {
+    "type": "-=",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "/=",
     "named": false
   },
   {
@@ -224,6 +3709,10 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
@@ -232,7 +3721,23 @@
     "named": false
   },
   {
+    "type": "<>",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
     "type": "==",
+    "named": false
+  },
+  {
+    "type": "===",
+    "named": false
+  },
+  {
+    "type": "=>",
     "named": false
   },
   {
@@ -244,9 +3749,69 @@
     "named": false
   },
   {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "?=",
+    "named": false
+  },
+  {
+    "type": "??",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "and",
+    "named": false
+  },
+  {
     "type": "antlers_comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "asset",
+    "named": false
+  },
+  {
+    "type": "breadcrumbs",
+    "named": false
+  },
+  {
+    "type": "bwa",
+    "named": false
+  },
+  {
+    "type": "bwo",
+    "named": false
+  },
+  {
+    "type": "bxor",
+    "named": false
+  },
+  {
+    "type": "cache",
+    "named": false
+  },
+  {
+    "type": "can",
+    "named": false
+  },
+  {
+    "type": "children",
+    "named": false
+  },
+  {
+    "type": "collection_keyword",
+    "named": true
+  },
+  {
+    "type": "dump",
+    "named": false
   },
   {
     "type": "else",
@@ -257,15 +3822,67 @@
     "named": false
   },
   {
-    "type": "endif",
+    "type": "entries_keyword",
+    "named": true
+  },
+  {
+    "type": "errors",
     "named": false
   },
   {
-    "type": "endunless",
+    "type": "false",
     "named": false
   },
   {
-    "type": "if",
+    "type": "form",
+    "named": false
+  },
+  {
+    "type": "form_keyword",
+    "named": true
+  },
+  {
+    "type": "glide",
+    "named": false
+  },
+  {
+    "type": "groupby",
+    "named": false
+  },
+  {
+    "type": "if_keyword",
+    "named": true
+  },
+  {
+    "type": "ignore_symbol",
+    "named": true
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
+    "type": "is",
+    "named": false
+  },
+  {
+    "type": "locales",
+    "named": false
+  },
+  {
+    "type": "markdown",
+    "named": false
+  },
+  {
+    "type": "merge",
+    "named": false
+  },
+  {
+    "type": "nav_keyword",
+    "named": true
+  },
+  {
+    "type": "no_cache",
     "named": false
   },
   {
@@ -273,20 +3890,120 @@
     "named": true
   },
   {
-    "type": "text",
-    "named": true
-  },
-  {
-    "type": "unless",
+    "type": "oauth",
     "named": false
   },
   {
-    "type": "variable",
+    "type": "once",
+    "named": false
+  },
+  {
+    "type": "or",
+    "named": false
+  },
+  {
+    "type": "orderby",
+    "named": false
+  },
+  {
+    "type": "partial",
+    "named": false
+  },
+  {
+    "type": "php_echo",
     "named": true
   },
   {
-    "type": "whitespace",
+    "type": "php_raw",
     "named": true
+  },
+  {
+    "type": "pluck",
+    "named": false
+  },
+  {
+    "type": "prepend",
+    "named": false
+  },
+  {
+    "type": "push",
+    "named": false
+  },
+  {
+    "type": "redirect",
+    "named": false
+  },
+  {
+    "type": "scope",
+    "named": false
+  },
+  {
+    "type": "section",
+    "named": false
+  },
+  {
+    "type": "session",
+    "named": false
+  },
+  {
+    "type": "skip",
+    "named": false
+  },
+  {
+    "type": "slot",
+    "named": false
+  },
+  {
+    "type": "svg",
+    "named": false
+  },
+  {
+    "type": "switch",
+    "named": false
+  },
+  {
+    "type": "take",
+    "named": false
+  },
+  {
+    "type": "taxonomy_keyword",
+    "named": true
+  },
+  {
+    "type": "template_content",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "unless_keyword",
+    "named": true
+  },
+  {
+    "type": "user",
+    "named": false
+  },
+  {
+    "type": "void",
+    "named": false
+  },
+  {
+    "type": "where",
+    "named": false
+  },
+  {
+    "type": "xor",
+    "named": false
+  },
+  {
+    "type": "yield",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
   },
   {
     "type": "{{",
@@ -298,6 +4015,10 @@
   },
   {
     "type": "||",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   },
   {

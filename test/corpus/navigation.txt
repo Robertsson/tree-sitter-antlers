@@ -1,0 +1,88 @@
+==================
+Basic navigation loop
+==================
+
+{{ nav:main }}
+  <li>Item</li>
+{{ /nav:main }}
+
+---
+
+(source
+  (text)
+  (nav_loop
+    (nav_keyword)
+    (variable)
+    (text)
+    (nav_keyword)
+    (variable))
+  (text))
+
+==================
+Breadcrumbs navigation
+==================
+
+{{ nav:breadcrumbs }}
+  <li>Breadcrumb</li>
+{{ /nav:breadcrumbs }}
+
+---
+
+(source
+  (text)
+  (nav_loop
+    (nav_keyword)
+    (text)
+    (nav_keyword))
+  (text))
+
+==================
+Navigation with parameters
+==================
+
+{{ nav from="main" }}
+  <li>Item</li>
+{{ /nav }}
+
+---
+
+(source
+  (text)
+  (nav_loop
+    (nav_keyword)
+    (tag_parameters
+      (parameter
+        (parameter_name)
+        (parameter_value
+          (string
+            (double_quoted_string)))))
+    (text)
+    (nav_keyword))
+  (text))
+
+==================
+Basic recursive pattern
+==================
+
+{{ *recursive children* }}
+
+---
+
+(source
+  (text)
+  (recursive_pattern)
+  (text))
+
+==================
+Recursive with scoped variable
+==================
+
+{{ *recursive children:my_variable* }}
+
+---
+
+(source
+  (text)
+  (recursive_pattern
+    (variable))
+  (text))

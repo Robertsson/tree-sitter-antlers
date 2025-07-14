@@ -1,0 +1,317 @@
+==================
+Simple variables
+==================
+
+{{ title }}
+{{ site_name }}
+{{ content }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text))
+
+==================
+Variables with colons
+==================
+
+{{ author:name }}
+{{ content:title }}
+{{ nav:main }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text))
+
+==================
+String literals
+==================
+
+{{ "hello world" }}
+{{ 'single quotes' }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (double_quoted_string))))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (string
+            (single_quoted_string))))))
+  (text))
+
+==================
+Number literals
+==================
+
+{{ 42 }}
+{{ 3.14 }}
+{{ 0 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (number)))))
+  (text))
+
+==================
+Boolean literals
+==================
+
+{{ true }}
+{{ false }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (boolean)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (boolean)))))
+  (text))
+
+==================
+Comments
+==================
+
+{{# This is a comment #}}
+{{!-- Another comment --}}
+
+---
+
+(source
+  (text)
+  (antlers_comment)
+  (text)
+  (antlers_comment)
+  (text))
+
+==================
+Variables with modifiers
+==================
+
+{{ title | uppercase }}
+{{ content | markdown }}
+{{ price | format:currency }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name)
+        (modifier_parameters
+          (variable)))))
+  (text))
+
+==================
+Chained modifiers
+==================
+
+{{ title | lowercase | trim }}
+{{ content | markdown | truncate:100 }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))
+      (applied_modifier
+        (modifier_name))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))
+      (applied_modifier
+        (modifier_name))
+      (applied_modifier
+        (modifier_name)
+        (modifier_parameters
+          (number)))))
+  (text))
+
+==================
+Array access
+==================
+
+{{ items[0] }}
+{{ users[key] }}
+{{ products["featured"] }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text))
+
+==================
+Complex nested access
+==================
+
+{{ content:meta:description }}
+{{ author:profile:social:twitter }}
+{{ items[0]:title }}
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text))
+
+==================
+Mixed content
+==================
+
+<h1>{{ title }}</h1>
+<p>Welcome to {{ site_name }}!</p>
+
+---
+
+(source
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text)
+  (antlers_tag
+    (expression_with_modifiers
+      (expression
+        (primary_expression
+          (variable)))))
+  (text))
