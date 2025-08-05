@@ -163,10 +163,28 @@ module.exports = grammar({
     ),
 
     variable: $ => choice(
-      // Disambiguated variable: $variable_name
-      seq('$', /[a-zA-Z_][a-zA-Z0-9_]*/),
-      // Antlers variable pattern supporting complex nested access: name:prop[0]:field
-      /[_A-Za-z](?:[-_0-9A-Za-z:.]*|\[[^\]]*\])*(?:[_A-Za-z0-9])?/ 
+      $.simple_variable,
+      $.nested_variable,
+      $.array_access_variable
+    ),
+
+    simple_variable: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
+
+    nested_variable: $ => seq(
+      $.simple_variable,
+      repeat1(seq(
+        choice(':', '.'),
+        $.simple_variable
+      ))
+    ),
+
+    array_access_variable: $ => seq(
+      $.simple_variable,
+      repeat1(seq(
+        '[',
+        choice($.simple_variable, $.number, $.string),
+        ']'
+      ))
     ),
 
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
