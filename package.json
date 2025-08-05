@@ -4,15 +4,15 @@
   "description": "Tree-sitter grammar for Antlers templating language used in Statamic CMS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tree-sitter/tree-sitter-antlers.git"
+    "url": "https://github.com/Robertsson/tree-sitter-antlers.git"
   },
-  "homepage": "https://github.com/tree-sitter/tree-sitter-antlers#readme",
+  "homepage": "https://github.com/Robertsson/tree-sitter-antlers#readme",
   "bugs": {
-    "url": "https://github.com/tree-sitter/tree-sitter-antlers/issues"
+    "url": "https://github.com/Robertsson/tree-sitter-antlers/issues"
   },
   "license": "MIT",
   "author": {
-    "name": "Tree-sitter Antlers Contributors"
+    "name": "Robertsson"
   },
   "main": "bindings/node",
   "types": "bindings/node",
